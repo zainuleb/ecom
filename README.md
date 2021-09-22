@@ -1,8 +1,8 @@
 # Ecommerce Website
 
-##Group Members: Abdullah, Mohibullah, Ebad
+## Group Members: Abdullah, Mohibullah, Ebad
 
-![alt text](https://www.vhv.rs/dpng/d/25-256081_e-commerce-photos-png-transparent-png.png)
+![alt text](https://www.x-cart.com/wp-content/uploads/2019/01/ecommerce-768x278.jpg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -19,12 +19,7 @@ const requestProducts = () => {
   };
 };
 
-const fetchProductDetails = () => async (dispatch) => {
-  dispatch(requestProductDetails());
-  try {
-    const productDetailsData = await prodObj.getProductDetails();
-
-    const fetchProductDetails = (id) => async (dispatch) => {
+const fetchProductDetails = (id) => async (dispatch) => {
   dispatch(requestProductDetails());
   try {
     const productDetailsData = await prodObj.getProductDetails(id);

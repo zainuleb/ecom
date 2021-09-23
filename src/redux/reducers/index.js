@@ -1,10 +1,14 @@
-import products from './products';
-import cartItems from './cartItems';
-
-import {combineReducers} from 'redux'
+import products from "./products";
+import productDetails from "./productDetails";
+import cartItems from "./cartItems";
+import categories from "./categories.js";
+import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    products,cartItems
-})
+  products,
+  cartItems,
+  categories,
+  productDetails,
+});
 
 export default rootReducer;

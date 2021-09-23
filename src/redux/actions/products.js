@@ -5,11 +5,10 @@ const prodObj = new productApi();
 const fetchAllProducts = ()=> async (dispatch)=> {
     dispatch(requestProducts())
     try {
-         const postData = await prodObj.getAllProducts()
+         const productData = await prodObj.getAllProducts()
          /* const = await response.json(); */
-         dispatch({type: "FETCH_PRODUCTS_SUCCESS", payload: postData});
+         dispatch({type: "FETCH_PRODUCTS_SUCCESS", payload: productData});
     }  
-    
     catch (error) {
         dispatch({type:"FETCH_PRODUCTS_FAILURE", payload:error});        
     }

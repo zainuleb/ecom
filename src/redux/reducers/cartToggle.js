@@ -1,28 +1,30 @@
 const initialState = {
-  products: [],
+  hidden: true,
   loading: false,
   error: null,
 };
 
-const products = (state = initialState, action) => {
+const cartToggle = (state = initialState, action) => {
   switch (action.type) {
-    case "FETCH_PRODUCTS_REQUEST":
+    case "FETCH_CARTITEMS_REQUEST":
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case "FETCH_PRODUCTS_SUCCESS":
-      return {
-        ...state,
-        loading: false,
-        products: action.payload,
-      };
-    case "FETCH_PRODUCTS_FAILURE":
+
+    case "TOGGLE_CART_HIDDEN_FAILURE":
       return {
         ...state,
         loading: false,
         error: action.payload,
+      };
+
+    case "TOGGLE_CART_HIDDEN_REQUEST":
+      return {
+        ...state,
+        loading: true,
+        error: null,
       };
 
     default:
@@ -30,4 +32,4 @@ const products = (state = initialState, action) => {
   }
 };
 
-export default products;
+export default cartToggle;

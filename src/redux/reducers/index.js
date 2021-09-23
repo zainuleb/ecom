@@ -1,10 +1,19 @@
-import products from './products';
-import cartItems from './cartItems';
+import products from "./products";
+import productDetails from "./productDetails";
 
-import {combineReducers} from 'redux'
+import categories from "./categories.js";
+import specificCategory from "./specificCategory";
+
+import cartToggle from "./cartToggle.js";
+
+import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    products,cartItems
-})
+  products,
+  cartToggle,
+  categories,
+  specificCategory,
+  productDetails,
+});
 
 export default rootReducer;

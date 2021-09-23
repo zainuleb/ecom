@@ -15,8 +15,6 @@ const Category = () => {
 
   const { specificCategory } = useSelector((state) => state.specificCategory);
 
-  console.log(specificCategory);
-
   const [products, setProducts] = useState([]);
 
   const getData = async () => {
@@ -29,8 +27,6 @@ const Category = () => {
     getData();
     // eslint-disable-next-line
   }, [specificCategory]);
-
-  console.log(products);
 
   return (
     <div>

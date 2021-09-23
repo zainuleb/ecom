@@ -1,28 +1,16 @@
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Navbar from "./components/navbar/Navbar";
+import Home from "./pages/home/Home";
 import './App.css';
-import React,{useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux'
-import allActions from './redux/actions/index.js'
 
 function App() {
-  const dispatch = useDispatch()
-  
-  useEffect(() => {
-    dispatch(allActions.productsActions.fetchAllProducts())
-    // eslint-disable-next-line
-  }, [])
-
-  const {products} = useSelector(state=>state.products);
-
-  console.log(products)
-
   return (
     <div className="App">
-   {products?
-        <ul>{
-        products.map((item)=>(
-          <li key={item.id}>{item.title}</li>
-        ))
-          }</ul>:<div>Loading</div>}
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
     </div>
   );
 }

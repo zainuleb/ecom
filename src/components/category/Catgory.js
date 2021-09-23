@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../redux/actions/index.js";
@@ -15,8 +16,6 @@ const Category = () => {
 
   const { specificCategory } = useSelector((state) => state.specificCategory);
 
-  console.log(specificCategory);
-
   const [products, setProducts] = useState([]);
 
   const getData = async () => {
@@ -28,26 +27,39 @@ const Category = () => {
   useEffect(() => {
     getData();
     // eslint-disable-next-line
-  }, [specificCategory]);
-
-  console.log(products);
+  }, []);
 
   return (
-    <div>
-      {products ? (
-        <ul>
-          {products.map((item) => (
-            <li key={item.id}>
-              <h3>{item.title}</h3>
-              <img alt={item.title} src={item.image} />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <div>Loading</div>
-      )}
-    </div>
-  );
-};
+      
 
-export default Category;
+<div className={styles.collection}>
+      <div className={styles.inner_collection_wrapper}>
+          <h2>CATEGORY DETAIL </h2>
+        <p>Top Rated Category</p>
+      </div>
+      <div className={styles.card_wrapper}>
+        {products.map((prod) => {
+          return (
+            <div className={styles.inner_card}>
+              <div className={styles.image_wrapper}>
+                <img src={prod.image} alt="card-image" />
+              </div>
+              <div className={styles.desc_wrapper}>
+                <div className={styles.desc_inner_wrapper}>
+                  <p>{prod.title.substring(0, 10)}</p>
+                  <p>$ {prod.price}</p>
+                </div>
+                <div className={styles.desc_inner_wrapper}>
+                  <button className={styles.cart_btn}>Details...</button>
+                  <button className={styles.cart_btn}>Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+    )
+}
+
+export default Category

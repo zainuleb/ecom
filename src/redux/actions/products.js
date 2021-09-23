@@ -19,11 +19,10 @@ const requestProducts = () => {
   };
 };
 
-const fetchProductDetails = () => async (dispatch) => {
+const fetchProductDetails = (id) => async (dispatch) => {
   dispatch(requestProductDetails());
   try {
-    const productDetailsData = await prodObj.getProductDetails();
-    /* const = await response.json(); */
+    const productDetailsData = await prodObj.getProductDetails(id);
     dispatch({
       type: "FETCH_PRODUCTSDETAILS_SUCCESS",
       payload: productDetailsData,

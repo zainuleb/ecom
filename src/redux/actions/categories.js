@@ -18,7 +18,27 @@ const requestCategories = () => {
   };
 };
 
+const fetchSpecificCategory = (category) => async (dispatch) => {
+  dispatch(requestSpecificCategory());
+  try {
+    const categoryData = await prodObj.getSpecificCategory(category);
+    dispatch({
+      type: "FETCH_SPECIFICCATEGORIES_SUCCESS",
+      payload: categoryData,
+    });
+  } catch (error) {
+    dispatch({ type: "FETCH_SPECIFICCATEGORIES_FAILURE", payload: error });
+  }
+};
+
+const requestSpecificCategory = () => {
+  return {
+    type: "FETCH_SPECIFICCATEGORIES_REQUEST",
+  };
+};
+
 // eslint-disable-next-line
 export default {
   fetchAllCategories,
+  fetchSpecificCategory,
 };

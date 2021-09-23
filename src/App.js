@@ -1,12 +1,12 @@
 import "./App.css";
-import { Route, Switch , Redirect } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 
 //Import Pages
 import Home from "./pages/home/Home";
 import Categories from "./pages/categories/Categories";
 import ProductDetail from "./pages/productDetail/ProductDetail";
-import Category from "./components/category/Catgory";
+import Category from "./components/category/Category";
 import ErrorPage from "./pages/errorPage/ErrorPage.js";
 import Footer from "./components/footer/Footer";
 

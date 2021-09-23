@@ -1,48 +1,70 @@
 import React, { useState, useEffect } from "react";
-import Electronics from "../../components/categoriesUI/Electronics";
-import Jewelery from "../../components/categoriesUI/Jewelery";
-import Men from "../../components/categoriesUI/Men";
-import Women from "../../components/categoriesUI/Women";
+import { useSelector, useDispatch } from "react-redux";
+import allActions from "../../redux/actions/index.js";
+
 import OurServices from "../../components/ourServices/OurServices";
 import CarSlider from "../../components/carousel";
+import HomeCategoriesUI from "../../components/UI/homeCategoriesUI/HomeCategoriesUI.js";
 
 const Home = () => {
-  const [electronics, setElectronics] = useState([]);
-  const [jewelery, setJewelery] = useState([]);
-  const [men, setMen] = useState([]);
-  const [women, setWomen] = useState([]);
-
+  //Actions Area
+  const dispatch = useDispatch();
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/category/electronics?limit=4")
-      .then((res) => res.json())
-      .then((json) => setElectronics(json));
+    dispatch(allActions.categoriesActions.fetchAllCategories());
+    dispatch(allActions.productsActions.fetchAllProducts());
+    // eslint-disable-next-line
   }, []);
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products/category/jewelery?limit=4")
-      .then((res) => res.json())
-      .then((json) => setJewelery(json));
-  }, []);
+  //Selectors
+  const { products } = useSelector((state) => state.products);
+  const { categories } = useSelector((state) => state.categories);
+
+  //Get Products of Respective Categories
+  let firstRun = false;
+
+  const getProducts = async (prods, category) => {
+    let result = await prods.filter((item) => item.category === category);
+    result = await result.slice(0, 4);
+    return result;
+  };
+
+  const [homeData, setHomeData] = useState();
+
+  const getInitialData = async () => {
+    if (
+      categories.length === 4 &&
+      products.length === 20 &&
+      firstRun === false
+    ) {
+      firstRun = true;
+
+      for (let i = 0; i < 4; i++) {
+        let prods = products;
+        let result = await getProducts(prods, categories[i]);
+        setHomeData((item) => {
+          return { ...item, [categories[i]]: result };
+        });
+      }
+    }
+  };
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/category/men's clothing?limit=4")
-      .then((res) => res.json())
-      .then((json) => setMen(json));
-  }, []);
+    getInitialData();
+    // eslint-disable-next-line
+  }, [categories]);
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products/category/women's clothing?limit=4")
-      .then((res) => res.json())
-      .then((json) => setWomen(json));
-  }, []);
+  console.log(homeData);
 
   return (
     <>
       <CarSlider />
-      <Electronics electronics={electronics} />
-      <Jewelery jewelery={jewelery} />
-      <Men men={men} />
-      <Women women={women} />
+      {homeData ? (
+        Object.keys(homeData).map((key, item) => (
+          <HomeCategoriesUI key={key} category={key} products={homeData[key]} />
+        ))
+      ) : (
+        <div>Loading</div>
+      )}
       <OurServices />
     </>
   );

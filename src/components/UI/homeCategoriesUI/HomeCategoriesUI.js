@@ -1,22 +1,23 @@
-import React from 'react';
-import { Link } from "react-router-dom"
-import styles from "./Category.module.css";
+import React from "react";
+import styles from "./HomeCategoriesUI.module.css";
 
-const Electronics = ({electronics}) => {
+import { Link } from "react-router-dom";
+
+const HomeCategoriesUI = ({ category, products }) => {
   return (
     <div className={styles.collection}>
       <div className={styles.inner_collection_wrapper}>
-        <Link to="/category/electronics" className={styles.collection_link}>
-          <h2>ELECTRONICS COLLECTION </h2>
+        <Link to={`/category/${category}`} className={styles.collection_link}>
+          <h2>{category} COLLECTION </h2>
         </Link>
         <p>Top Rated Category</p>
       </div>
       <div className={styles.card_wrapper}>
-        {electronics.map((prod) => {
+        {products.map((prod) => {
           return (
-            <div className={styles.inner_card}>
+            <div key={prod.id} className={styles.inner_card}>
               <div className={styles.image_wrapper}>
-                <img src={prod.image} alt="card-image" />
+                <img src={prod.image} alt={prod.title} />
               </div>
               <div className={styles.desc_wrapper}>
                 <div className={styles.desc_inner_wrapper}>
@@ -34,6 +35,6 @@ const Electronics = ({electronics}) => {
       </div>
     </div>
   );
-}
+};
 
-export default Electronics
+export default HomeCategoriesUI;

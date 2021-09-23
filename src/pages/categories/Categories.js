@@ -15,7 +15,7 @@ const Categories = () => {
   const [categoriesList, setCategoriesList] = useState([]);
 
   const { categories } = useSelector((state) => state.categories);
-  console.log(categories , "testing cat")
+
   const setCategories = () => {
     if (categories.length > 0) {
       setCategoriesList(categories);

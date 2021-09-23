@@ -20,7 +20,15 @@ export class productApi {
       `https://fakestoreapi.com/products/categories`
     );
     if (result && result.data) {
-      console.log("Services", result.data);
+      return result.data;
+    }
+  }
+
+  async getSpecificCategory(category) {
+    let result = await axios.get(
+      `https://fakestoreapi.com/products/category/${category}`
+    );
+    if (result && result.data) {
       return result.data;
     }
   }

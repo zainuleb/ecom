@@ -1,0 +1,18 @@
+.error_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+.error_page h1 {
+  color: #47b2d9;
+}
+

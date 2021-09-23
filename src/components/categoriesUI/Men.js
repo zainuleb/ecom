@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Category.module.css";
 
 const Men = ({ men }) => {
   return (
     <div className={styles.collection}>
       <div className={styles.inner_collection_wrapper}>
-        <h2>MEN'S COLLECTION</h2>
+        <Link to="/category/men's clothing" className={styles.collection_link}>
+          <h2>MEN'S COLLECTION </h2>
+        </Link>
         <p>Top Rated Category</p>
       </div>
       <div className={styles.card_wrapper}>
@@ -16,11 +19,12 @@ const Men = ({ men }) => {
                 <img src={prod.image} alt="card-image" />
               </div>
               <div className={styles.desc_wrapper}>
-                <div className={styles.title}>
-                  <p>Mens Collection</p>
+                <div className={styles.desc_inner_wrapper}>
+                  <p>{prod.title.substring(0, 10)}</p>
+                  <p>$ {prod.price}</p>
                 </div>
                 <div className={styles.desc_inner_wrapper}>
-                  <p>$ {prod.price}</p>
+                  <button className={styles.cart_btn}>Details...</button>
                   <button className={styles.cart_btn}>Add to Cart</button>
                 </div>
               </div>

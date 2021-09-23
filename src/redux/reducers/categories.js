@@ -1,24 +1,24 @@
 const initialState = {
-  products: [],
+  categories: [],
   loading: false,
   error: null,
 };
 
-const products = (state = initialState, action) => {
+const categories = (state = initialState, action) => {
   switch (action.type) {
-    case "FETCH_PRODUCTS_REQUEST":
+    case "FETCH_CATEGORIES_REQUEST":
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case "FETCH_PRODUCTS_SUCCESS":
+    case "FETCH_CATEGORIES_SUCCESS":
       return {
         ...state,
         loading: false,
-        products: action.payload,
+        categories: action.payload,
       };
-    case "FETCH_PRODUCTS_FAILURE":
+    case "FETCH_CATEGORIES_FAILURE":
       return {
         ...state,
         loading: false,
@@ -30,4 +30,4 @@ const products = (state = initialState, action) => {
   }
 };
 
-export default products;
+export default categories;

@@ -27,7 +27,7 @@ const Category = () => {
   useEffect(() => {
     getData();
     // eslint-disable-next-line
-  }, []);
+  }, [specificCategory]);
 
   return (
       

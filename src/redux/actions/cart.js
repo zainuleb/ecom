@@ -13,7 +13,25 @@ const requestProducts = () => {
   };
 };
 
+const addItemToCart = (cartItem) => async (dispatch) => {
+  try {
+    dispatch({ type: "ADD_CART_ITEM_SUCCESS", payload: cartItem });
+  } catch (error) {
+    dispatch({ type: "ADD_CART_ITEM_FAILURE", payload: error });
+  }
+};
+
+const delItemFromCart = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: "DEL_CART_ITEM_SUCCESS", payload: id });
+  } catch (error) {
+    dispatch({ type: "DEL_CART_ITEM_FAILURE", payload: error });
+  }
+};
+
 // eslint-disable-next-line
 export default {
   toggleCartHidden,
+  addItemToCart,
+  delItemFromCart,
 };

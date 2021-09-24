@@ -1,8 +1,8 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./OurServices.module.css";
 
-const Service = ({ heading , description , icon}) => {
+const Service = ({ heading, description, icon }) => {
   return (
     <div className="row">
       <div className="col-md-4">
@@ -16,4 +16,4 @@ const Service = ({ heading , description , icon}) => {
   );
 };
 
-export default Service
+export default Service;

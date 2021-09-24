@@ -23,7 +23,7 @@ const Women = ({ women }) => {
               </div>
               <div className={styles.desc_wrapper}>
                 <div className={styles.desc_inner_wrapper}>
-                  <p>{prod.title.substring(0, 10)}</p>
+                  <p>{prod.title.substring(0, 15)}</p>
                   <p>$ {prod.price}</p>
                 </div>
                 <div className={styles.desc_inner_wrapper}>

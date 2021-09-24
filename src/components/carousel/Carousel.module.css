@@ -4,23 +4,25 @@
 }
 
 .Slider_wrapper .slider1{
-  background-image: url("../../assets/images/bg6.jpg");
+  background-image: url("../../assets/images/bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
 }
 
 .Slider_wrapper .slider2{
-  background-image: url("../../assets/images/bg5.webp");
+  background-image: url("../../assets/images/bg3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 100vh;
 }
 
 .Slider_wrapper .slider3{
-  background-image: url("../../assets/images/bg6.jpg");
+  background-image: url("../../assets/images/bg4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 100vh;
   margin-bottom: 20px;
 }

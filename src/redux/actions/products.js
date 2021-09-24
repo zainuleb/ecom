@@ -32,12 +32,6 @@ const fetchProductDetails = (id) => async (dispatch) => {
   }
 };
 
-const requestProductDetails = () => {
-  return {
-    type: "FETCH_PRODUCTSDETAILS_REQUEST",
-  };
-};
-
 // eslint-disable-next-line
 export default {
   fetchAllProducts,

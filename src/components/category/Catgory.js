@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../redux/actions/index.js";
 import { useParams } from "react-router";
+import styles from "./Category.module.css"
 
 const Category = () => {
   const { category } = useParams();

@@ -1,15 +1,20 @@
-import React from "react";
-import styles from "./HomeCategoriesUI.module.css";
+import React, { useState } from "react";
+import styles from "./CategoryUI.module.css";
+import AddToCartButton from "../../buttons/addCartButton/AddToCartButton.js";
+import DelFromCartButton from "../../buttons/delCartButton/DelFromCartButton.js";
 
-import { Link } from "react-router-dom";
+const CategoryUI = ({ products }) => {
+  const [toggle, setToggle] = useState(false);
 
-const HomeCategoriesUI = ({ category, products, addToCartHandler }) => {
+  const triggerToggle = () => {
+    setToggle(!toggle);
+    console.log("jere");
+  };
+
   return (
     <div className={styles.collection}>
       <div className={styles.inner_collection_wrapper}>
-        <Link to={`/category/${category}`} className={styles.collection_link}>
-          <h2>{category} COLLECTION </h2>
-        </Link>
+        <h2>CATEGORY DETAIL </h2>
         <p>Top Rated Category</p>
       </div>
       <div className={styles.card_wrapper}>
@@ -26,7 +31,14 @@ const HomeCategoriesUI = ({ category, products, addToCartHandler }) => {
                 </div>
                 <div className={styles.desc_inner_wrapper}>
                   <button className={styles.cart_btn}>Details...</button>
-                  <button className={styles.cart_btn}>Add to Cart</button>
+
+                  <AddToCartButton onClick={triggerToggle} product={prod}>
+                    Add to Cart
+                  </AddToCartButton>
+
+                  <DelFromCartButton onClick={triggerToggle} product={prod}>
+                    Delete
+                  </DelFromCartButton>
                 </div>
               </div>
             </div>
@@ -37,4 +49,4 @@ const HomeCategoriesUI = ({ category, products, addToCartHandler }) => {
   );
 };
 
-export default HomeCategoriesUI;
+export default CategoryUI;

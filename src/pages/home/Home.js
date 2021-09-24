@@ -21,7 +21,6 @@ const Home = () => {
 
   //Get Products of Respective Categories
   let firstRun = false;
-
   const getProducts = async (prods, category) => {
     let result = await prods.filter((item) => item.category === category);
     result = await result.slice(0, 4);
@@ -31,27 +30,28 @@ const Home = () => {
   const [homeData, setHomeData] = useState();
 
   const getInitialData = async () => {
+    firstRun = true;
+
+    for (let i = 0; i < 4; i++) {
+      let prods = products;
+      let result = await getProducts(prods, categories[i]);
+      setHomeData((item) => {
+        return { ...item, [categories[i]]: result };
+      });
+    }
+  };
+
+  useEffect(() => {
     if (
       categories.length === 4 &&
       products.length === 20 &&
       firstRun === false
     ) {
-      firstRun = true;
-
-      for (let i = 0; i < 4; i++) {
-        let prods = products;
-        let result = await getProducts(prods, categories[i]);
-        setHomeData((item) => {
-          return { ...item, [categories[i]]: result };
-        });
-      }
+      getInitialData();
     }
-  };
 
-  useEffect(() => {
-    getInitialData();
     // eslint-disable-next-line
-  }, [categories]);
+  }, [categories, products]);
 
   console.log(homeData);
 
@@ -59,8 +59,12 @@ const Home = () => {
     <>
       <CarSlider />
       {homeData ? (
-        Object.keys(homeData).map((key, item) => (
-          <HomeCategoriesUI key={key} category={key} products={homeData[key]} />
+        Object.keys(homeData).map((key, index) => (
+          <HomeCategoriesUI
+            key={index}
+            category={key}
+            products={homeData[key]}
+          />
         ))
       ) : (
         <div>Loading</div>

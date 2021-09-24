@@ -1,10 +1,6 @@
 import React from "react";
-import {
-  faTags,
-  faThumbsUp,
-  faUndo,
-} from "@fortawesome/free-solid-svg-icons";
-import Service from "./Service";
+import { faTags, faThumbsUp, faUndo } from "@fortawesome/free-solid-svg-icons";
+import Service from "./Service.js";
 import styles from "./OurServices.module.css";
 
 const OurServices = () => {

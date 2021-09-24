@@ -1,16 +1,10 @@
-import React from 'react';
-import styles from "./Cart.module.css"
+import React from "react";
+import CartUI from "../../components/UI/cartUI/CartUI"
 
 const Cart = () => {
-    return (
-        <div className={styles.wrapper}>
-            <div className={styles.inner_wrapper}>
-                <div className={styles.product_image}
-                ></div>
-                <div></div>
-           </div>
-        </div>
-    )
-}
+  return (
+    <CartUI />
+  );
+};
 
-export default Cart
+export default Cart;

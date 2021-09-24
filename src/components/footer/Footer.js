@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
@@ -79,11 +79,9 @@ const Footer = () => {
               <p>Monday - Sunday: 09:00 - 22:00</p>
               <p>1123 7th Str, Ottawa, CA 96312</p>
               <p>
-                <p to="#">+84.0248.3579</p>
+                <span to="#">+84.0248.3579</span>
               </p>
-              <email>
-                <p to="#">infodeercreative@gmail.com</p>
-              </email>
+              <a href="mailto:zainulebadd@gmail.com">Email</a>
             </div>
           </div>
         </div>

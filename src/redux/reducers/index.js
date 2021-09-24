@@ -5,15 +5,17 @@ import categories from "./categories.js";
 import specificCategory from "./specificCategory";
 
 import cartToggle from "./cartToggle.js";
+import cartReducer from "./cartReducer.js";
 
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
   products,
-  cartToggle,
+  productDetails,
   categories,
   specificCategory,
-  productDetails,
+  cartToggle,
+  cartReducer,
 });
 
 export default rootReducer;

@@ -1,6 +1,6 @@
 # Ecommerce Website
 
-##Group Members: Abdullah, Mohibullah, Ebad
+## Group Members: Abdullah, Mohibullah, Ebad
 
 ![alt text](https://www.vhv.rs/dpng/d/25-256081_e-commerce-photos-png-transparent-png.png)
 

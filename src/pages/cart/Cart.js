@@ -1,7 +1,8 @@
 import React from "react";
+import CartList from "../../components/cartList/CartList";
 
 const Cart = () => {
-  return <div></div>;
+  return <CartList />;
 };
 
 export default Cart;

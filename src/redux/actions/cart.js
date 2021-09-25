@@ -21,9 +21,9 @@ const addItemToCart = (cartItem) => async (dispatch) => {
   }
 };
 
-const delItemFromCart = (id) => async (dispatch) => {
+const delItemFromCart = (cartItem) => async (dispatch) => {
   try {
-    dispatch({ type: "DEL_CART_ITEM_SUCCESS", payload: id });
+    dispatch({ type: "DEL_CART_ITEM_SUCCESS", payload: cartItem });
   } catch (error) {
     dispatch({ type: "DEL_CART_ITEM_FAILURE", payload: error });
   }

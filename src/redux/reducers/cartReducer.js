@@ -1,6 +1,9 @@
+import { addItemToCart, removeItemFromCart } from "../services/cart.utils";
+
 const INITIAL_STATE = {
   hidden: true,
   cartItems: [],
+  subTotal: 0,
 };
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -8,7 +11,9 @@ const cartReducer = (state = INITIAL_STATE, action) => {
     case "ADD_CART_ITEM_SUCCESS":
       return {
         ...state,
-        cartItems: [...state.cartItems, action.payload],
+        cartItems: addItemToCart(state.cartItems, action.payload),
+        /* cartItems: [...state.cartItems, action.payload], */
+        subTotal: state.subTotal + parseInt(action.payload.price),
         loading: false,
       };
     case "ADD_CART_ITEM_FAILURE":
@@ -19,7 +24,9 @@ const cartReducer = (state = INITIAL_STATE, action) => {
     case "DEL_CART_ITEM_SUCCESS":
       return {
         ...state,
-        cartItems: state.cartItems.filter((item) => item.id !== action.payload),
+        cartItems: removeItemFromCart(state.cartItems, action.payload),
+        /* cartItems: state.cartItems.filter((item) => item !== action.payload), */
+        subTotal: state.subTotal - parseInt(action.payload.price),
         loading: false,
       };
     case "DEL_CART_ITEM_FAILURE":

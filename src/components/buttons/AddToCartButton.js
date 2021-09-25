@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import allActions from "../../../redux/actions/index.js";
+import allActions from "../../redux/actions/index.js";
+import styles from "./Button.module.css";
 
 const AddToCartButton = ({ children, product }) => {
   //Actions Area
@@ -8,10 +9,14 @@ const AddToCartButton = ({ children, product }) => {
 
   const addHandler = () => {
     dispatch(allActions.cartActions.addItemToCart(product));
-    console.log("dispatch");
+    /*  setCart(true); */
   };
 
-  return <button onClick={addHandler}>{children}</button>;
+  return (
+    <button className={styles.customButton} onClick={addHandler}>
+      {children}
+    </button>
+  );
 };
 
 export default AddToCartButton;

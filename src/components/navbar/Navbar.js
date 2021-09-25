@@ -1,11 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHeart,
-  faLock,
-  faSearch,
-  faWallet,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHome, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/images/logo.png";
 import styles from "./Navbar.module.css";
 
@@ -14,10 +10,12 @@ const Navbar = () => {
     <div className={styles.wrapper}>
       <img src={logo} alt="logo" />
       <div className={styles.social_icons}>
-        <FontAwesomeIcon icon={faSearch} />
-        <FontAwesomeIcon icon={faHeart} />
-        <FontAwesomeIcon icon={faLock} />
-        <FontAwesomeIcon icon={faWallet} />
+        <Link to="/home">
+          <FontAwesomeIcon icon={faHome} size="lg" />
+        </Link>
+        <Link to="/cart">
+          <FontAwesomeIcon icon={faShoppingCart} size="lg" />
+        </Link>
       </div>
     </div>
   );

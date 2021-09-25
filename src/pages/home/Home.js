@@ -27,12 +27,12 @@ const Home = () => {
     return result;
   };
 
+  //Get Initial Data when Component Renders
   const [homeData, setHomeData] = useState();
-
   const getInitialData = async () => {
     firstRun = true;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < products.length; i++) {
       let prods = products;
       let result = await getProducts(prods, categories[i]);
       setHomeData((item) => {
@@ -42,18 +42,12 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (
-      categories.length === 4 &&
-      products.length === 20 &&
-      firstRun === false
-    ) {
+    if (categories.length > 0 && products.length > 0 && firstRun === false) {
       getInitialData();
     }
 
     // eslint-disable-next-line
   }, [categories, products]);
-
-  console.log(homeData);
 
   return (
     <>

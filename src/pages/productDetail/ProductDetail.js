@@ -17,7 +17,6 @@ const ProductDetail = () => {
   const { productDetails } = useSelector((state) => state.productDetails);
 
   const [product, setProduct] = useState();
-
   const getProduct = () => {
     if (productDetails !== null) {
       setProduct(productDetails);
@@ -31,7 +30,6 @@ const ProductDetail = () => {
 
   return (
     <div>
-      Here
       {product ? (
         <div>
           {product.title}

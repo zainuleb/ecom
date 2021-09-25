@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../redux/actions/index.js";
 import { useParams } from "react-router";
-
 import CategoryUI from "../UI/categoryUI/CategoryUI.js";
 
 const Category = () => {

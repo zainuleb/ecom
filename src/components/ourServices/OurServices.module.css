@@ -1,0 +1,27 @@
+.services {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 50px 0px;
+}
+
+.services_div {
+  padding: 50px 30px;
+  text-align: center;
+  width: 350px;
+  background-color: #ffffff;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.services_div h6 {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.services_div p {
+  font-size: 14px;
+  color: #858585;
+  margin: 0;
+  padding: 0;
+}

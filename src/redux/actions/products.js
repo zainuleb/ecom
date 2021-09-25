@@ -19,7 +19,7 @@ const requestProducts = () => {
   };
 };
 
-    const fetchProductDetails = (id) => async (dispatch) => {
+const fetchProductDetails = (id) => async (dispatch) => {
   dispatch(requestProductDetails());
   try {
     const productDetailsData = await prodObj.getProductDetails(id);
@@ -30,12 +30,6 @@ const requestProducts = () => {
   } catch (error) {
     dispatch({ type: "FETCH_PRODUCTSDETAILS_FAILURE", payload: error });
   }
-};
-
-const requestProductDetails = () => {
-  return {
-    type: "FETCH_PRODUCTSDETAILS_REQUEST",
-  };
 };
 
 // eslint-disable-next-line

@@ -1,9 +1,9 @@
-
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../redux/actions/index.js";
 import { useParams } from "react-router";
-import styles from "./Category.module.css"
+
+import CategoryUI from "../UI/categoryUI/CategoryUI.js";
 
 const Category = () => {
   const { category } = useParams();
@@ -30,37 +30,19 @@ const Category = () => {
     // eslint-disable-next-line
   }, [specificCategory]);
 
+  const addToCartHandler = (prod) => {
+    console.log(prod);
+  };
+
   return (
-      
+    <>
+      {products ? (
+        <CategoryUI products={products} addToCartHandler={addToCartHandler} />
+      ) : (
+        <div>Loading</div>
+      )}
+    </>
+  );
+};
 
-<div className={styles.collection}>
-      <div className={styles.inner_collection_wrapper}>
-          <h2>CATEGORY DETAIL </h2>
-        <p>Top Rated Category</p>
-      </div>
-      <div className={styles.card_wrapper}>
-        {products.map((prod) => {
-          return (
-            <div className={styles.inner_card}>
-              <div className={styles.image_wrapper}>
-                <img src={prod.image} alt="card-image" />
-              </div>
-              <div className={styles.desc_wrapper}>
-                <div className={styles.desc_inner_wrapper}>
-                  <p>{prod.title.substring(0, 10)}</p>
-                  <p>$ {prod.price}</p>
-                </div>
-                <div className={styles.desc_inner_wrapper}>
-                  <button className={styles.cart_btn}>Details...</button>
-                  <button className={styles.cart_btn}>Add to Cart</button>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-    )
-}
-
-export default Category
+export default Category;

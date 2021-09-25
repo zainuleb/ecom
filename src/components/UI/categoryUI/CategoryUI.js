@@ -4,13 +4,6 @@ import AddToCartButton from "../../buttons/addCartButton/AddToCartButton.js";
 import DelFromCartButton from "../../buttons/delCartButton/DelFromCartButton.js";
 
 const CategoryUI = ({ products }) => {
-  const [toggle, setToggle] = useState(false);
-
-  const triggerToggle = () => {
-    setToggle(!toggle);
-    console.log("jere");
-  };
-
   return (
     <div className={styles.collection}>
       <div className={styles.inner_collection_wrapper}>

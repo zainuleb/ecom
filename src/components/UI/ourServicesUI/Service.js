@@ -8,7 +8,7 @@ const Service = ({ heading, description, icon }) => {
       <div className="col-md-4">
         <div className={styles.services_div}>
           <FontAwesomeIcon icon={icon} />
-          <h6>{heading}</h6>
+          <h4>{heading}</h4>
           <p> {description}</p>
         </div>
       </div>

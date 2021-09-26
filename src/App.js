@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Switch, Redirect } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
+import Navbar from "./components/UI/navbarUI/Navbar";
 
 //Import Pages
 import Home from "./pages/home/Home";
@@ -10,7 +10,7 @@ import ProductDetail from "./pages/productDetail/ProductDetail";
 import Cart from "./pages/cart/Cart";
 
 //Import Components
-import Footer from "./components/footer/Footer";
+import Footer from "./components/UI/footerUI/Footer";
 import ErrorPage from "./pages/errorPage/ErrorPage.js";
 
 function App() {

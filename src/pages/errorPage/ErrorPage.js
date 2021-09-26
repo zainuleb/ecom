@@ -9,7 +9,7 @@ const ErrorPage = () => {
         <h2>Page Not Found</h2>
         <h6>The page you are looking for doesn't exist</h6>
         <p>
-          Go to <Link to="/"> Home </Link> page.
+          Go to <Link to="/home" className={styles.link}> Home </Link> page.
         </p>
       </div>
   );

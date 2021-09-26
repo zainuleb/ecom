@@ -6,7 +6,7 @@ const CategoryUI = ({ products }) => {
   return (
     <div className={styles.collection}>
       <div className={styles.inner_collection_wrapper}>
-        <h2>CATEGORY DETAIL </h2>
+        <h1>CATEGORY DETAIL </h1>
         <p>Top Rated Category</p>
       </div>
       <div className={styles.card_wrapper}>

@@ -11,7 +11,7 @@ class CarSlider extends Component {
       slidesToScroll: 1,
       autoplay: true,
       speed: 1000,
-      autoplaySpeed: 2900,
+      autoplaySpeed: 2500,
       cssEase: "linear",
     };
     return (

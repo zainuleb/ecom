@@ -14,14 +14,18 @@ const CartItem = ({ item }) => {
       <div className={styles.image_wrapper}>
         <img src={item.image} alt={item.title} />
       </div>
-      <div className={styles.title_wrapper}> {item.title}</div>
+      <div className={styles.title_wrapper}> {item.title.substring(0, 15)}</div>
       <div className={styles.title_wrapper}>{item.category}</div>
       <div className={styles.counter_wrapper}>
-        <AddToCartButton product={item}>++++</AddToCartButton>
+        <DelFromCartButton product={item}>
+          <p className={styles.counter_wrapper_dec}>-</p>
+        </DelFromCartButton>
         {quantity ? <span>{quantity}</span> : <></>}
-        <DelFromCartButton product={item}>----</DelFromCartButton>
+        <AddToCartButton product={item}>
+          <p className={styles.counter_wrapper_inc}>+</p>
+        </AddToCartButton>
       </div>
-      <div className={styles.price_wrapper}>{item.price}</div>
+      <div className={styles.price_wrapper}>{item.price}$</div>
     </div>
   );
 };

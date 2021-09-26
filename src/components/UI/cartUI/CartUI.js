@@ -9,35 +9,44 @@ const CartUI = ({ cartList, total }) => {
       <div className={styles.inner_wrapper}>
         <div className={styles.left_flex}>
           <div className={styles.heading}>
-            <h3>Your Shopping Cart</h3>
+            <h2>Your Shopping Cart</h2>
           </div>
-          {cartList ? (
-            cartList.map((item) => <CartItem key={item.id} item={item} />)
-          ) : (
-            <div>Empty</div>
-          )}
+          <div className={styles.product}>
+            {cartList.length ? (
+              cartList.map((item) => <CartItem key={item.id} item={item} />)
+            ) : (
+              <div>No Product Added yet to cart </div>
+            )}
+          </div>
           <div className={styles.heading}>
-            <Link to="/">Back to Shop</Link>
-            <p>Sub Total : {total}</p>
+            <Link to="/home" className={styles.link}>
+              Back to Shop
+            </Link>
+            <p className={styles.price}>Sub Total : {total} $</p>
           </div>
         </div>
         <div className={styles.right_flex}>
-          <h3>Payment Methods</h3>
+          <h2>Payment Methods</h2>
           <div className={styles.rightTop_flex}>
             <div className={styles.payment_wrapper}>
-              <h5>Card Details</h5>
-              <h5>/</h5>
-              <h5>Cash Details</h5>
+              <h3>Card Details</h3>
+              <h3>/</h3>
+              <h3>Cash Details</h3>
             </div>
             <div className={styles.payment_details}>
-              <h6>Card Number</h6>
+              <h5>Card Number</h5>
               <input />
-              <h6>Expiry Date</h6>
+              <h5>Expiry Date</h5>
               <input />
             </div>
           </div>
-
-          <div className={styles.rightBottom_flex}>Checkout</div>
+          <div className={styles.rightBottom_flex}>
+            <button>
+              <Link to="/" className={styles.link}>
+                Checkout
+              </Link>
+            </button>
+          </div>
         </div>
       </div>
     </div>

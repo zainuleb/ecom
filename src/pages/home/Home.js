@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import allActions from "../../redux/actions/index.js";
 
-import OurServices from "../../components/ourServices/OurServices";
-import CarSlider from "../../components/UI/carousel";
+import OurServices from "../../components/UI/ourServicesUI/OurServices";
+import CarSlider from "../../components/UI/carouselUI";
 import HomeCategoriesUI from "../../components/UI/homeCategoriesUI/HomeCategoriesUI.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import styles from "./Home.module.css";
 
 const Home = () => {
   //Actions Area
@@ -61,7 +64,9 @@ const Home = () => {
           />
         ))
       ) : (
-        <div>Loading</div>
+        <div>
+          <FontAwesomeIcon icon={faSpinner} className={styles.icon} />
+        </div>
       )}
       <OurServices />
     </>

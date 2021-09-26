@@ -1,3 +1,7 @@
+.collection {
+  margin-top: 120px;
+}
+
 .inner_collection_wrapper {
   text-align: center;
   color: #ff465d;
@@ -5,13 +9,17 @@
   margin: 0 auto;
   border-top: 1px solid #08546c;
   border-bottom: 1px solid #08546c;
-  padding: 12px 0px;
+  padding: 13px 0px;
   animation: show 10s ease-in-out 1;
 }
 
 .collection_link {
   text-decoration: none;
   color: #ff465d;
+}
+
+.inner_collection_wrapper h1{
+  margin: 0;
 }
 
 .inner_collection_wrapper p {

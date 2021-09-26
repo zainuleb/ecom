@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import allActions from "../../redux/actions/index.js";
 import { useParams } from "react-router-dom";
+import allActions from "../../redux/actions/index.js";
+import DetailUI from "../../components/UI/productDetailUI/DetailUI.js";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -25,21 +26,13 @@ const ProductDetail = () => {
 
   useEffect(() => {
     getProduct();
+    window.scrollTo(0, 0);
     // eslint-disable-next-line
   }, [productDetails]);
 
   return (
     <div>
-      {product ? (
-        <div>
-          {product.title}
-          <div>
-            <img alt={product.title} src={product.image} />
-          </div>
-        </div>
-      ) : (
-        <div>Loading</div>
-      )}
+      <DetailUI product={product} />
     </div>
   );
 };

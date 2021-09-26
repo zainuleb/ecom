@@ -9,7 +9,6 @@ const AddToCartButton = ({ children, product }) => {
 
   const addHandler = () => {
     dispatch(allActions.cartActions.addItemToCart(product));
-    /*  setCart(true); */
   };
 
   return (

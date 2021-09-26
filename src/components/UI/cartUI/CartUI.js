@@ -41,11 +41,15 @@ const CartUI = ({ cartList, total }) => {
             </div>
           </div>
           <div className={styles.rightBottom_flex}>
-            <button>
-              <Link to="/" className={styles.link}>
-                Checkout
-              </Link>
-            </button>
+            {cartList.length ? (
+              <button>
+                <Link to="/" className={styles.link}>
+                  Checkout
+                </Link>
+              </button>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>

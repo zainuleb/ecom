@@ -4,11 +4,7 @@ import styles from "./CartUI.module.css";
 import AddToCartButton from "../../buttons/AddToCartButton";
 import DelFromCartButton from "../../buttons/DelFromCartButton";
 
-//Redux Import
-import { useSelector } from "react-redux";
-
 const CartItem = ({ item }) => {
-  const [{ quantity }] = useSelector((state) => state.cartReducer.cartItems);
   return (
     <div className={styles.left_inner_wrapper}>
       <div className={styles.image_wrapper}>
@@ -20,7 +16,7 @@ const CartItem = ({ item }) => {
         <DelFromCartButton product={item}>
           <p className={styles.counter_wrapper_dec}>-</p>
         </DelFromCartButton>
-        {quantity ? <span>{quantity}</span> : <></>}
+        <span>{item.quantity}</span>
         <AddToCartButton product={item}>
           <p className={styles.counter_wrapper_inc}>+</p>
         </AddToCartButton>

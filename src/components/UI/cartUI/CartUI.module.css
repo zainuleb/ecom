@@ -117,6 +117,12 @@
 .right_flex .rightBottom_flex {
   background-color: #08546c;
   padding: 20px;
+  height: 29px;
+  font-size: 22px;
+}
+
+.right_flex .rightBottom_flex:hover {
+  background-color: rgb(13, 172, 40);
 }
 
 .rightBottom_flex button {
@@ -133,6 +139,9 @@
   color: #ffffff;
   cursor: pointer;
   font-weight: 600;
+  font-size: 17px;
+  font-weight: 300;
+  font-style: oblique;
 }
 
 .right_flex .rightTop_flex {

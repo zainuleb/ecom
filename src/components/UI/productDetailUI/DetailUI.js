@@ -23,7 +23,7 @@ const DetailUI = ({ product }) => {
           <div className={styles.detail_wrapper}>
             <div className={styles.title_wrapper}>
               <h1>{product?.title?.substring(0, 15)}</h1>
-              <p className={styles.rating}>{product.rating.rate} RATING</p>
+              <p className={styles.rating}>{product?.rating?.rate} RATING</p>
             </div>
             <h4 className={styles.category}>{product.category}</h4>
             <h3>

@@ -9,7 +9,6 @@ const DelFromCartButton = ({ children, product }) => {
 
   const delHandler = () => {
     dispatch(allActions.cartActions.delItemFromCart(product));
-    /*  setCart(false); */
   };
 
   return (

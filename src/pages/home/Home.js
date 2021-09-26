@@ -35,7 +35,7 @@ const Home = () => {
   const getInitialData = async () => {
     firstRun = true;
 
-    for (let i = 0; i < products.length; i++) {
+    for (let i = 0; i < categories.length; i++) {
       let prods = products;
       let result = await getProducts(prods, categories[i]);
       setHomeData((item) => {

@@ -24,14 +24,6 @@ const LoginUI = ({ Login, error }) => {
         <form onSubmit={submitHandler}>
           <div className={styles.inner_form_wrapper}>
             <input
-              type="text"
-              placeholder="Name"
-              name="name"
-              id="name"
-              value={details.name}
-              onChange={handleChange}
-            />
-            <input
               type="email"
               placeholder="Email"
               name="email"

@@ -21,7 +21,7 @@ const CartItem = ({ item }) => {
           <p className={styles.counter_wrapper_inc}>+</p>
         </AddToCartButton>
       </div>
-      <div className={styles.price_wrapper}>{item.price}$</div>
+      <div className={styles.price_wrapper}>{item.price * item.quantity}$</div>
     </div>
   );
 };

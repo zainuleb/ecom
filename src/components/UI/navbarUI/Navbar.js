@@ -4,12 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../../assets/images/logo.png";
 import styles from "./Navbar.module.css";
+import sStyles from "./Navbar.module.scss";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const { cartItems } = useSelector((state) => state.cartReducer);
+  const totalItems = cartItems.map((item) => item.quantity);
 
-  console.log(cartItems);
+  console.log(totalItems);
 
   return (
     <div className={styles.wrapper}>
@@ -21,8 +23,9 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faHome} className={styles.icon} />
         </Link>
         {cartItems.length ? (
-          <Link to="/cart">
+          <Link to="/cart" className={styles.link}>
             <FontAwesomeIcon icon={faShoppingCart} className={styles.icon} />
+            <span className={sStyles.rainbow}>{totalItems}</span>
           </Link>
         ) : (
           ""

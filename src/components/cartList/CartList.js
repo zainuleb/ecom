@@ -12,6 +12,7 @@ const CartList = () => {
   useEffect(() => {
     setCartList(cartItems);
     setTotal(subTotal);
+    window.scrollTo(0, 0);
     // eslint-disable-next-line
   }, [cartItems]);
 

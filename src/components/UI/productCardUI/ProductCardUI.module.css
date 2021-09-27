@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 240px;
+  width: 280px;
   min-height: 270px;
   height: 100%;
   margin-bottom: 40px;
@@ -48,17 +48,16 @@
   border: 1px solid #d5243d;
 }
 
-.btn{
+.btn {
   background-color: transparent;
-  border: 1px solid #d5243d ;
+  border: 1px solid #d5243d;
   padding: 4px 20px;
   font-size: 16px;
 }
 
-
-.btn:hover{
-  background-color: #d5243d ;
-  border: 1px solid #d5243d ;
+.btn:hover {
+  background-color: #d5243d;
+  border: 1px solid #d5243d;
   border: none;
   color: #ffffff;
 }

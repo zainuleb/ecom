@@ -12,6 +12,7 @@ import Cart from "./pages/cart/Cart";
 //Import Components
 import Footer from "./components/UI/footerUI/Footer";
 import ErrorPage from "./pages/errorPage/ErrorPage.js";
+import CartSummary from "./pages/summary/CartSummary";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/details/:id" component={ProductDetail} />
         <Route path={`/categories/:category`} component={Categories} />
         <Route path={`/cart`} component={Cart} />
+        <Route path="/summary" component={CartSummary} />
         <Route path="/404" component={ErrorPage} />
         <Redirect from="*" to="/404" />
       </Switch>

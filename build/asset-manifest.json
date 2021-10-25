@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/ecom/static/css/main.b5ca4f99.chunk.css",
+    "main.js": "/ecom/static/js/main.3ae932fd.chunk.js",
+    "main.js.map": "/ecom/static/js/main.3ae932fd.chunk.js.map",
+    "runtime-main.js": "/ecom/static/js/runtime-main.5a460d53.js",
+    "runtime-main.js.map": "/ecom/static/js/runtime-main.5a460d53.js.map",
+    "static/css/2.8d2fa27a.chunk.css": "/ecom/static/css/2.8d2fa27a.chunk.css",
+    "static/js/2.4f12761c.chunk.js": "/ecom/static/js/2.4f12761c.chunk.js",
+    "static/js/2.4f12761c.chunk.js.map": "/ecom/static/js/2.4f12761c.chunk.js.map",
+    "index.html": "/ecom/index.html",
+    "static/css/2.8d2fa27a.chunk.css.map": "/ecom/static/css/2.8d2fa27a.chunk.css.map",
+    "static/css/main.b5ca4f99.chunk.css.map": "/ecom/static/css/main.b5ca4f99.chunk.css.map",
+    "static/js/2.4f12761c.chunk.js.LICENSE.txt": "/ecom/static/js/2.4f12761c.chunk.js.LICENSE.txt",
+    "static/media/Carousel.module.css": "/ecom/static/media/bg4.48fafcc8.jpg",
+    "static/media/CartUI.module.css": "/ecom/static/media/card.653234ef.jpg",
+    "static/media/slick-theme.css": "/ecom/static/media/slick.c94f7671.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5a460d53.js",
+    "static/css/2.8d2fa27a.chunk.css",
+    "static/js/2.4f12761c.chunk.js",
+    "static/css/main.b5ca4f99.chunk.css",
+    "static/js/main.3ae932fd.chunk.js"
+  ]
+}
